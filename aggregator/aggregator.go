@@ -279,8 +279,10 @@ func (a *Aggregator) handleReceivedDataStream(entry *datastreamer.FileEntry, cli
 
 					// If the batch is marked as Invalid in the DS we enforce retrieve the data from L1
 					if a.cfg.UseL1BatchData || a.currentStreamBatch.Type == datastream.BatchType_BATCH_TYPE_INVALID {
+						log.Info(fmt.Sprintf("zjg, Using L1 batch data for batch %d", a.currentStreamBatch.BatchNumber))
 						a.currentStreamBatch.BatchL2Data = virtualBatch.BatchL2Data
 					} else {
+						log.Info(fmt.Sprintf("zjg, Using DS batch data for batch %d", a.currentStreamBatch.BatchNumber))
 						a.currentStreamBatch.BatchL2Data = batchl2Data
 					}
 
@@ -374,6 +376,7 @@ func (a *Aggregator) handleReceivedDataStream(entry *datastreamer.FileEntry, cli
 					DeltaTimestamp:  l2Block.DeltaTimestamp,
 					IndexL1InfoTree: l2Block.L1InfotreeIndex,
 				}
+				log.Info(fmt.Sprintf("zjg, ds block:%v,%v,%v", l2Block.Number, l2Block.DeltaTimestamp, l2Block.L1InfotreeIndex))
 
 				a.currentStreamL2Block.ChangeL2BlockHeader = header
 				a.currentStreamL2Block.Transactions = make([]state.L2TxRaw, 0)

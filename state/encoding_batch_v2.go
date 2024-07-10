@@ -218,6 +218,7 @@ func DecodeBatchV2(txsData []byte) (*BatchRawV2, error) {
 				blocks = append(blocks, *currentBlock)
 			}
 			pos, currentBlock, err = decodeBlockHeader(txsData, pos+1)
+			log.Info(fmt.Sprintf("zjg, decodeBlockHeader, %v, DeltaTimestamp:%v, index:%v", currentBlock.BlockNumber, currentBlock.DeltaTimestamp, currentBlock.IndexL1InfoTree))
 			if err != nil {
 				return nil, fmt.Errorf("pos: %d can't decode new BlockHeader: %w", pos, err)
 			}
