@@ -376,7 +376,7 @@ func (a *Aggregator) handleReceivedDataStream(entry *datastreamer.FileEntry, cli
 					DeltaTimestamp:  l2Block.DeltaTimestamp,
 					IndexL1InfoTree: l2Block.L1InfotreeIndex,
 				}
-				log.Info(fmt.Sprintf("zjg, ds block:%v,%v,%v", l2Block.Number, l2Block.DeltaTimestamp, l2Block.L1InfotreeIndex))
+				log.Info(fmt.Sprintf("zjg, ds batch:%v, block:%v, index:%v", l2Block.BatchNumber, l2Block.Number, l2Block.L1InfotreeIndex))
 
 				a.currentStreamL2Block.ChangeL2BlockHeader = header
 				a.currentStreamL2Block.Transactions = make([]state.L2TxRaw, 0)
