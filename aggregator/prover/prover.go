@@ -69,7 +69,6 @@ func (p *Prover) Addr() string {
 
 // Status gets the prover status.
 func (p *Prover) Status() (*GetStatusResponse, error) {
-	start := time.Now()
 	req := &AggregatorMessage{
 		Request: &AggregatorMessage_GetStatusRequest{
 			GetStatusRequest: &GetStatusRequest{},
@@ -79,11 +78,9 @@ func (p *Prover) Status() (*GetStatusResponse, error) {
 	if err != nil {
 		return nil, err
 	}
-	log.Infof("Prover status call")
 	if msg, ok := res.Response.(*ProverMessage_GetStatusResponse); ok {
 		return msg.GetStatusResponse, nil
 	}
-	log.Infof("Prover %s status call took %v", p.ID(), time.Since(start))
 	return nil, fmt.Errorf("%w, wanted %T, got %T", ErrBadProverResponse, &ProverMessage_GetStatusResponse{}, res.Response)
 }
 
@@ -119,12 +116,11 @@ func (p *Prover) BatchProof(input *StatelessInputProver) (*string, error) {
 			GenStatelessBatchProofRequest: &GenStatelessBatchProofRequest{Input: input},
 		},
 	}
-	start := time.Now()
+
 	res, err := p.call(req)
 	if err != nil {
 		return nil, err
 	}
-	log.Infof("Prover %s batch proof call took %v", p.ID(), time.Since(start))
 
 	if msg, ok := res.Response.(*ProverMessage_GenBatchProofResponse); ok {
 		switch msg.GenBatchProofResponse.Result {
@@ -157,12 +153,11 @@ func (p *Prover) AggregatedProof(inputProof1, inputProof2 string) (*string, erro
 			},
 		},
 	}
-	start := time.Now()
+
 	res, err := p.call(req)
 	if err != nil {
 		return nil, err
 	}
-	log.Infof("Prover %s aggregated proof call took %v", p.ID(), time.Since(start))
 
 	if msg, ok := res.Response.(*ProverMessage_GenAggregatedProofResponse); ok {
 		switch msg.GenAggregatedProofResponse.Result {
@@ -199,12 +194,11 @@ func (p *Prover) FinalProof(inputProof string, aggregatorAddr string) (*string, 
 			},
 		},
 	}
-	start := time.Now()
+
 	res, err := p.call(req)
 	if err != nil {
 		return nil, err
 	}
-	log.Infof("Prover %s final proof call took %v", p.ID(), time.Since(start))
 
 	if msg, ok := res.Response.(*ProverMessage_GenFinalProofResponse); ok {
 		switch msg.GenFinalProofResponse.Result {
@@ -235,12 +229,11 @@ func (p *Prover) CancelProofRequest(proofID string) error {
 			CancelRequest: &CancelRequest{Id: proofID},
 		},
 	}
-	start := time.Now()
+
 	res, err := p.call(req)
 	if err != nil {
 		return err
 	}
-	log.Infof("Prover %s cancel proof call took %v", p.ID(), time.Since(start))
 
 	if msg, ok := res.Response.(*ProverMessage_CancelResponse); ok {
 		switch msg.CancelResponse.Result {
