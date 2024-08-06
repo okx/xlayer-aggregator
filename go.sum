@@ -43,8 +43,6 @@ github.com/0xPolygon/cdk-rpc v0.0.0-20240419104226-c0a62ba0f49d h1:sxh6hZ2jF/sxx
 github.com/0xPolygon/cdk-rpc v0.0.0-20240419104226-c0a62ba0f49d/go.mod h1:2scWqMMufrQXu7TikDgQ3BsyaKoX8qP26D6E262vSOg=
 github.com/0xPolygonHermez/zkevm-data-streamer v0.2.2 h1:XRMTk+W6vtJVGVjuEznfWyNt7HkRkkuSmlN5Y6p60Sc=
 github.com/0xPolygonHermez/zkevm-data-streamer v0.2.2/go.mod h1:0QkAXcFa92mFJrCbN3UPUJGJYes851yEgYHLONnaosE=
-github.com/0xPolygonHermez/zkevm-ethtx-manager v0.1.9 h1:vrAezzwTNke6NroDAltGh1k2AJ6ibmZPBsG0bCltbRc=
-github.com/0xPolygonHermez/zkevm-ethtx-manager v0.1.9/go.mod h1:pRqfLQVM3nbzdhy3buqjAgcVyNDKAXOHqTSgkwiKpic=
 github.com/0xPolygonHermez/zkevm-synchronizer-l1 v0.6.1 h1:pf0lvUJNl5/3AnpnFPvgaYTUoOydVUaqI0hyZGglI2E=
 github.com/0xPolygonHermez/zkevm-synchronizer-l1 v0.6.1/go.mod h1:3L6m4ZYs2tTTNhxMtq1KHSclxr7RmlZ3eWtOe8lsYsM=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
@@ -464,6 +462,8 @@ github.com/modern-go/reflect2 v1.0.1/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3Rllmb
 github.com/nxadm/tail v1.4.4/go.mod h1:kenIhsEOeOJmVchQTgglprH7qJGnHDVpk1VPCcaMI8A=
 github.com/nxadm/tail v1.4.8 h1:nPr65rt6Y5JFSKQO7qToXr7pePgD6Gwiw05lkbyAQTE=
 github.com/nxadm/tail v1.4.8/go.mod h1:+ncqLTQzXmGhMZNUePPaPqPvBxHAIsmXswZKocGu+AU=
+github.com/okx/xlayer-ethtx-manager v0.0.2 h1:9lkmnp5ie+02+cMrY7lLplgL83LAkKp1lybXIl4V5ZI=
+github.com/okx/xlayer-ethtx-manager v0.0.2/go.mod h1:pyE0HblBXUMUfZgvjiS1omFgVHDmFVH1lTr4diqDlAw=
 github.com/olekukonko/tablewriter v0.0.5 h1:P2Ga83D34wi1o9J6Wh1mRuqd4mF/x/lgBS7N7AbDhec=
 github.com/olekukonko/tablewriter v0.0.5/go.mod h1:hPp6KlRPjbx+hW8ykQs1w3UBbZlj6HuIJcUGPhkA7kY=
 github.com/onsi/ginkgo v1.6.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
