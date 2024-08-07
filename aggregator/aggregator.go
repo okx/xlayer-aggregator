@@ -109,7 +109,7 @@ func New(
 		Level:       cfg.Log.Level,
 		Outputs:     cfg.Log.Outputs,
 	}
-	ethTxManager, err := ethtxmanager.New(cfg.EthTxManager)
+	ethTxManager, err := ethtxmanager.New(cfg.EthTxManager, common.HexToAddress(cfg.SenderAddress))
 	if err != nil {
 		log.Fatalf("error creating ethtxmanager client: %v", err)
 	}
